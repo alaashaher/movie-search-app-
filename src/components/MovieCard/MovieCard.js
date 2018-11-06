@@ -3,20 +3,19 @@ import React from 'react';
 import './MovieCard.css';
 
 const MovieCard = (props) => {
-  console.log("film props");
-    console.log(props);
     return (
         <div className="container">
             <div className="movie-card">
-                <div className="movie-header" >
+                <div className="movie-header" style={{ backgroundImage: `url(${props.movie.Poster})` }}>
                 </div>
                 <div className="movie-content">
-                    <div className="movie-content-header" style={{ backgroundImage: `url(${props.movie.Poster})` }}>
+                    <div className="movie-content-header">
                         <h3 className="movie-title">{props.movie.Title}</h3>
                     </div>
                     <div className="movie-info">
                         <div className="info-section">
-                            <label>Released</label>
+
+                          <label>Released</label>
                             <span>{props.movie.Released}</span>
                         </div>
                         <div className="info-section">
@@ -30,7 +29,8 @@ const MovieCard = (props) => {
                         <div className="info-section">
                             <label>Runtime</label>
                             <span>{props.movie.Runtime}</span>
-                        </div>
+
+</div>
                     </div>
                     <div className="plot" style={{fontSize: '12px'}}>
                         <p>{props.movie.Plot}</p>

@@ -10,11 +10,17 @@ class MovieSearch extends Component {
         title: '',
         movie: {},
         searchResults: [],
-        isSearching: false,
+        isSearching: false
     }
 
     componentDidMount() {
         this.loadMovie()
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.movieId !== this.state.movieId) {
+            this.loadMovie()
+        }
     }
 
     loadMovie() {
