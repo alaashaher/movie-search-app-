@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 import './Search.css';
 
@@ -20,10 +21,16 @@ const Search = (props) => {
     }
 
     return (
-        <div className="search">
-            <input type="search" name="movie-search" value={props.defaultTitle} onChange={props.search} />
-            {resultList}
-        </div>
+      <Container>
+        <Row>
+          <Col xs="12">
+            <div className="search">
+                <input type="search" name="movie-search" value={props.defaultTitle} onChange={props.search} />
+                {resultList}
+            </div>
+          </Col>
+        </Row>
+      </Container>
     );
 };
 
