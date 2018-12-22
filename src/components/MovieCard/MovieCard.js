@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
 import './MovieCard.css';
 
 const MovieCard = (props) => {
     return (
-        <div className="container">
+      <Container>
+        <Row>
+          <Col xs="12">
             <div className="movie-card">
                 <div className="movie-header" style={{ backgroundImage: `url(${props.movie.Poster})` }}>
                 </div>
@@ -30,14 +33,16 @@ const MovieCard = (props) => {
                             <label>Runtime</label>
                             <span>{props.movie.Runtime}</span>
 
-</div>
+                        </div>
                     </div>
                     <div className="plot" style={{fontSize: '12px'}}>
                         <p>{props.movie.Plot}</p>
                     </div>
                 </div>
             </div>
-        </div>
+          </Col>
+        </Row>
+      </Container>
     );
 };
 

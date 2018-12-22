@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Container, Row, Col } from 'reactstrap';
 
 import MovieCard from '../../components/MovieCard/MovieCard';
 import Search from '../../components/Search/Search';
@@ -73,16 +74,22 @@ class MovieSearch extends Component {
 
     render() {
         return (
-            <div onClick={() => this.setState({ isSearching: false })}>
-                <Search
-                    defaultTitle={this.state.title}
-                    search={this.searchMovie}
-                    results={this.state.searchResults}
-                    clicked={this.itemClicked}
-                    searching={this.state.isSearching} />
+          <Container>
+            <Row>
+              <Col xs="12">
+                <div onClick={() => this.setState({ isSearching: false })}>
+                    <Search
+                        defaultTitle={this.state.title}
+                        search={this.searchMovie}
+                        results={this.state.searchResults}
+                        clicked={this.itemClicked}
+                        searching={this.state.isSearching} />
 
-                <MovieCard movie={this.state.movie} />
-            </div>
+                    <MovieCard movie={this.state.movie} />
+                </div>
+              </Col>
+            </Row>
+          </Container>
         );
     }
 }
